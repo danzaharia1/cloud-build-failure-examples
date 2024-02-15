@@ -1,5 +1,7 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: gcr.io/cloud-builders/docker
+  args: [build, -t, 'gcr.io/danz-test/github.com/danzaharia1/cloud-build-failure-examples:710da21ba78eda5750536ec69260ddac6d0f7919',
+    -f, $Dockerfile, .]
   script: |
     #!/usr/bin/env bash
     docker build -t $_TARGET_REPO_TAG
