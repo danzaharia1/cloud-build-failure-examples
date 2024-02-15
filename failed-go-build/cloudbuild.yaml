@@ -1,11 +1,6 @@
 steps:
-- name: 'golang'
+- name: gcr.io/cloud-builders/docker
   entrypoint: /bin/bash
-  args: 
-  build
-  -t 'gcr.io/danz-test/github.com/danzaharia1/cloud-build-failure-examples:710da21ba78eda5750536ec69260ddac6d0f7919'
-  -f $Dockerfile
-  - -c
-  - |
-    go build
+  args: [build, -t, 'gcr.io/danz-test/github.com/danzaharia1/cloud-build-failure-examples:1557896a96e3da55c41e4d7af05f5215119b3e15',
+    -f, bad-docker-build-command/dockerfile, .]
 tags: ["cloud-build-failures"]
