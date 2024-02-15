@@ -1,8 +1,10 @@
 steps:
 - name: 'golang'
   entrypoint: /bin/bash
-  args: [build, -t, 'gcr.io/danz-test/github.com/danzaharia1/cloud-build-failure-examples:710da21ba78eda5750536ec69260ddac6d0f7919',
-    -f, $Dockerfile, .]
+  args: 
+  build
+  -t 'gcr.io/danz-test/github.com/danzaharia1/cloud-build-failure-examples:710da21ba78eda5750536ec69260ddac6d0f7919'
+  -f $Dockerfile
   - -c
   - |
     go build
